@@ -1,0 +1,28 @@
+name: Build Auto Decor
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v4
+
+      - name: Build Android mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: given
+          target: Android64
+
+      - name: Upload AutoDecor
+        uses: actions/upload-artifact@v4
+        with:
+          name: AutoDecor-Android
+          path: ${{ steps.build.outputs.build-output }}/*.geode
