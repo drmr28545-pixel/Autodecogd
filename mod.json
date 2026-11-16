@@ -1,0 +1,11 @@
+{
+    "geode": "v5.11.2",
+    "gd": {
+        "android": "2.2081"
+    },
+    "id": "autodecor.mobile",
+    "name": "Auto Decor",
+    "version": "v1.0.0",
+    "developer": "AutoDecor",
+    "description": "Automatically decorates Geometry Dash levels."
+}
